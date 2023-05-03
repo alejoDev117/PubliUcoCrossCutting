@@ -40,6 +40,14 @@ public final class UtilText {
 		return (getDefault(text,EMPTY)); //Operador ternario
 	}
 	
+	public final boolean isEmpty(final String text) {
+		return applyTrim(text).equals(EMPTY);
+	}
+	
+	public final String getDefaultEmpty(final String text, final String defaultValue) {
+		return isEmpty(text) ? getDefault(defaultValue) : text;
+	}
+	
 	public final String getDefaultValue() {
 		return EMPTY;
 	}
