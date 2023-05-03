@@ -4,7 +4,7 @@ import java.util.UUID;
 
 public final class UtilUUID {
 	
-	private static final String DEFAULT_UUID_AS_STRING = "FFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF";
+	private static final String DEFAULT_UUID_AS_STRING = "ffffffff-ffff-ffff-ffff-ffffffffffff";
 	private static final UUID DEFAULT_UUID = generateUUIDFromString(DEFAULT_UUID_AS_STRING); 
 	private static final String UUID_RE = "[a-f0-9]{8}([-][a-f0-9]{4}){3}[-][a-f0-9]{12}"; 
 	
