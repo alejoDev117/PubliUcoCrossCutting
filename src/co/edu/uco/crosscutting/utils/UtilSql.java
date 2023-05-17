@@ -3,6 +3,8 @@ package co.edu.uco.crosscutting.utils;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import co.edu.uco.compuconnect.crosscutting.exceptions.CompuconnectcCrossCuttingException;
+import co.edu.uco.compuconnect.crosscutting.utils.Messages.UtilSqlMessage;
 import co.edu.uco.crosscutting.exceptions.PubliucoCrossCuttingException;
 import co.edu.uco.crosscutting.utils.Messages.UtilsqlMessages;
 
@@ -31,4 +33,25 @@ public final class UtilSql {
 		throw PubliucoCrossCuttingException.create(technicalMessage, userMessage);
 	}
 	}
+	
+	public static void closeConnection(final Connection connection) {
+		try {
+		if(!connectionIsOpen(connection)) {	
+			connection.close();
+		}
+			}catch(PubliucoCrossCuttingException exception) {
+				
+				throw exception;
+				
+			} catch (final SQLException exception) {
+				
+				throw PubliucoCrossCuttingException.create(UtilsqlMessages.CONNECTION_IS_CLOSE_TECHNICAL_SQL_EXCEPTION,UtilsqlMessages.CONNECTION_IS_CLOSE_USER_MESSAGE);
+				
+			} catch (final Exception exception) {
+				
+				throw PubliucoCrossCuttingException.create(UtilsqlMessages.CONNECTION_IS_CLOSE_TECHNICAL_EXCEPTION,UtilsqlMessages.CONNECTION_IS_CLOSE_USER_MESSAGE);
+				
+			} 
+	
+		}
 }
