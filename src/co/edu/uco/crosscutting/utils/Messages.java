@@ -3,6 +3,9 @@ package co.edu.uco.crosscutting.utils;
 public final class Messages {
 
 	public static final class UtilsqlMessages{
+		private UtilsqlMessages() {
+			
+		}
 		public static final String CONNECTION_IS_OPEN_USER_MESSAGE = "Se ha presentado un problema tratando de validar si una conexion con la fuente de informacion estaba o no activa";
 		public static final String CONNECTION_IS_OPEN_TECHNICAL_NULL_CONNECTION = "No es posible validar si una conexion esta abierta cuando se encuentra nula";
 		public static final String CONNECTION_IS_OPEN_TECHNICAL_SQL_EXCEPTION = "Se ha presentado un excepcion de tipo SQLException tratando de validar si la conexion estaba o no abierta. Por favor valida la traza de errores completa de la excepcion presentada...";
@@ -24,8 +27,12 @@ public final class Messages {
 	}
 	
 	public static final class EstadoTipoRelacionInstitucionFacadeImpMessage{
+		private EstadoTipoRelacionInstitucionFacadeImpMessage() {
+			
+		}
 		public static final String LIST_EXCEPTION_USER_MESSAGE = "No ha sido posible listar";
 		public static final String LIST_EXCEPTION_TECHNICAL_MESSAGE = "Se ha presentado una excepcion inesperada de tipo Exception, no es posible listar";
 		
 	}
+	
 }
