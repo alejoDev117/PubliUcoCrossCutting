@@ -2,12 +2,13 @@ package co.edu.uco.crosscutting.utils;
 
 import java.text.DateFormat;
 
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
-import java.util.UUID;
+
 
 public final class UtilDateTime {
 	
@@ -29,7 +30,7 @@ public final class UtilDateTime {
         DateFormat format = new SimpleDateFormat(FORMAT_VALUE_DATE); 
         Date dateTime = null;
         try {
-            dateTime = format.parse(UtilText.getDefault(dateValue, DEFAULT_VALUE_DATE_AS_STRING)); 
+            dateTime = format.parse(UtilText.getUtilText().getDefault(dateValue, DEFAULT_VALUE_DATE_AS_STRING)); 
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -39,7 +40,7 @@ public final class UtilDateTime {
 	
 	public static final LocalTime fromStringToLocalTime(final String localDateValue) {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(FORMAT_VALUE_LOCALTIME);
-        LocalTime localTime = LocalTime.parse(UtilText.getDefault(localDateValue, DEFAULT_VALUE_LOCALTIME_AS_STRING), formatter);
+        LocalTime localTime = LocalTime.parse(UtilText.getUtilText().getDefault(localDateValue , DEFAULT_VALUE_DATE_AS_STRING), formatter);
         return localTime;
 	}
 	
